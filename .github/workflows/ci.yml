@@ -24,7 +24,11 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        pip install pytest
         pip install .
+    
+    - name: Run tests
+      run: pytest -v test_typosafe.py
     
     - name: Lint with ruff (if available)
       run: |
